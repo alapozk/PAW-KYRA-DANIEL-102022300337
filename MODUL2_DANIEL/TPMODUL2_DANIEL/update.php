@@ -10,7 +10,7 @@ if (isset($_POST['update']) && isset($_GET['id']) && is_numeric($_GET['id'])) {
     $tahun_terbit = (int) $_POST['tahun_terbit']; // Pastikan tahun berupa angka
 
     // Query Update Data
-    $query = "UPDATE tb_buku SET judul = '$judul', penulis = '$penulis', tahun_terbit = $tahun_terbit WHERE id = $id";
+    $query = "UPDATE tb_buku SET judul = '$judul', penulis = '$penulis', tahun_terbit = '$tahun_terbit' WHERE id = '$id'";
     $result = mysqli_query($conn, $query);
 
     if ($result) {
