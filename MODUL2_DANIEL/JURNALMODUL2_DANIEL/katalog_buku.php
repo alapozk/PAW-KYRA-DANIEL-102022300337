@@ -14,14 +14,14 @@ if (isset($_GET['search'])) {
     elseif (!preg_match("/^[a-zA-Z0-9 ]+$/", $search)) {
         echo "<script>alert('Pencarian hanya boleh mengandung huruf dan angka');</script>";
     } else {
-        // (4.) Buat query untuk menampilkan data
-        $query = "SELECT * FROM tb_buku WHERE judul LIKE '%$search%' OR penulis LIKE '%$search%'";
+// (4.) Buat query untuk menampilkan data
+$query = "SELECT * FROM tb_buku WHERE judul LIKE '%$search%' OR penulis LIKE '%$search%'";
 
-        // (5.) Jalankan query
-        $result = mysqli_query($conn, $query);
+// (5.) Jalankan query
+$result = mysqli_query($conn, $query);
 
-        // (6.) Tampung hasil query ke dalam array
-        $bukus = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// (6.) Tampung hasil query ke dalam array
+$bukus = mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
 } else {
     $query = "SELECT * FROM tb_buku";
